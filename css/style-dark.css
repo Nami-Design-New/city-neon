@@ -3870,14 +3870,14 @@ h2 {
 }
 
 .download-box {
+   height: 44px;
    margin: 0 auto;
    display: flex;
    align-items: center;
    justify-content: flex-start;
    gap: 20px;
    width: fit-content;
-   padding: 2px;
-   padding-right: 24px;
+   padding: 2px 24px 2px 64px;
    border-radius: 40px;
    -webkit-border-radius: 40px;
    -moz-border-radius: 40px;
@@ -3893,6 +3893,7 @@ h2 {
 }
 
 .download-box:hover  {
+   padding: 2px 64px 2px 24px;
    background-color: #fff;
    color: #ff998d;
 }
@@ -3910,6 +3911,10 @@ h2 {
    color: #fff;
    font-weight: 600;
    font-size: 16px;
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .download-box .input-icon {
@@ -3925,6 +3930,19 @@ h2 {
    justify-content: center;
    background-color: #fff;
    color: #000;
+   position: absolute;
+   left: 2px;
+   top: 50%;
+   transform: translateY(-50%);
+   transition: 0.3s;
+   -webkit-transition: 0.3s;
+   -moz-transition: 0.3s;
+   -ms-transition: 0.3s;
+   -o-transition: 0.3s;
+}
+
+.download-box:hover .input-icon {
+   left: calc(100% - 40px)
 }
 
 .download-box .input-icon img {
@@ -3968,6 +3986,9 @@ input.num.num2 {
    -moz-transition: 0.3s;
    -ms-transition: 0.3s;
    -o-transition: 0.3s;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
 }
 
 .intro-content-title.hide {
