@@ -111,20 +111,26 @@
         $(".intro-content-hidden").toggleClass("show");
     });
 
-  // toggle the titles
+  // toggle showing the titles
   const titles = document.querySelectorAll(".intro-content-title");
+  let currentTitleIndex = 0;
   window.addEventListener("load", function () {
     titles.forEach((title) => {
       title.classList.add("hide");
     });
-    titles[0].classList.remove("hide");
+    titles[currentTitleIndex].classList.remove("hide");
   });
+
   function toggleTitles() {
-    titles.forEach((title) => {
-      title.classList.contains("hide")
-        ? title.classList.remove("hide")
-        : title.classList.add("hide");
+    titles?.forEach((title) => {
+      title.classList.add("hide");
     });
+    if (currentTitleIndex + 1 >= titles.length) {
+      currentTitleIndex = 0;
+    } else {
+      currentTitleIndex++;
+    }
+    titles[currentTitleIndex].classList.remove("hide");
   }
   setInterval(toggleTitles, 5000);
 
